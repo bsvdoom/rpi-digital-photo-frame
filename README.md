@@ -8,12 +8,11 @@ Instructions on how to turn a pi zero w system into a digital picture frame.
 The installer installs screensaver and imagemagick software, sets homedir, 
 creates a directory for the pictures, makes shell scripts runable, adds slideshow.sh to run on startup.
 
-1. git clone https://github.com/MrHDR/rpi-digital-photo-frame.git
-2. cd /rpi-digital-photo-frame/
-3. chmod +x install.sh; sudo ./install.sh
-4. Copy your images into the images dir
-5. Reboot & enjoy!
-
+```
+sudo apt update
+sudo apt install git -y
+git clone https://github.com/MrHDR/rpi-digital-photo-frame.git
+chmod +x /rpi-digital-photo-frame/install.sh; sudo /rpi-digital-photo-frame/./install.sh
 ***************************************************
 FAQ
 

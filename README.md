@@ -12,7 +12,7 @@ creates a directory for the pictures, makes shell scripts runable, adds slidesho
 sudo apt update
 sudo apt install git -y
 git clone https://github.com/MrHDR/rpi-digital-photo-frame.git
-chmod +x install.sh; sudo .install.sh
+chmod +x install.sh; sudo ./install.sh
 ```
 ***************************************************
 FAQ

@@ -14,7 +14,7 @@ chmod +x *.sh
 mkdir images
 chmod 777 images
 
-cat <<EOT >> /etc/init.d/slideshow
+sudo cat <<EOT >> /etc/init.d/slideshow
 #! /bin/sh
 ### BEGIN INIT INFO
 # Provides:          slideshow

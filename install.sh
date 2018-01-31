@@ -14,7 +14,5 @@ mkdir images
 chmod 777 images
 
 sudo crontab /home/pi/rpi-digital-photo-frame/pictures/slidecron
-chmod +x /etc/init.d/slideshow
-update-rc.d slideshow defaults 91
 
 echo -e "\n -Done-\n"

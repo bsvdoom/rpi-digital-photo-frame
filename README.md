@@ -18,6 +18,28 @@ put your pictures in /rpi/digital-photo-frame/pictures/images
 reboot your pi
 ```
 ***************************************************
+Tips
+
+- you might want to set the screen size to 1080p, to do that do the following.
+```
+sudo nano /boot/config.txt
+```
+Change
+```
+#disable_overscan=1
+
+#framebuffer_width=1280
+#framebuffer_height=720
+```
+to
+```
+disable_overscan=1
+
+framebuffer_width=1280
+framebuffer_height=720
+```
+
+***************************************************
 FAQ
 
 -fbi is is displaying the images.

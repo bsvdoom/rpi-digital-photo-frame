@@ -20,5 +20,5 @@
 # For more information see the manual pages of crontab(5) and cron(8)
 # 
 # m h  dom mon dow   command
-@reboot sleep 10 && /home/pi/rpi-digital-photo-frame/pictures/slideshow.sh
+@reboot sleep 15 && /home/pi/rpi-digital-photo-frame/pictures/slideshow.sh
 0 */12 * * * reboot

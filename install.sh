@@ -7,7 +7,7 @@ fi
 
 apt-get update && apt-get install fbi imagemagick
 
-cd pictures
+cd /home/pi/rpi-digital-photo-frame/pictures
 echo "10" > delay.txt
 chmod +x *.sh
 mkdir images
@@ -27,8 +27,7 @@ sudo cat <<EOT >> /etc/init.d/slideshow
 case "\$1" in
     start)
         echo "Starting slideshow"
-        cd `pwd`
-        ./slideshow.sh &
+        sh /home/pi/rpi-digital-photo-frame/pictures/slideshow.sh &
     ;;
     stop)
         echo -n "Shutting down slideshow"

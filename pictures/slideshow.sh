@@ -3,7 +3,7 @@
 # How long between transitions?
 TIMEOUT=`cat /home/pi/rpi-digital-photo-frame/pictures/delay.txt`
 
-cd /home/pi/rpi-digital-photo-frame/pictures
+cd /home/pi/rpi-digital-photo-frame/pictures/images
 
 while true
 do

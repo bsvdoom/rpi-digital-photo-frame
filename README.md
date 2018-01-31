@@ -35,8 +35,8 @@ to
 ```
 disable_overscan=1
 
-framebuffer_width=1280
-framebuffer_height=720
+framebuffer_width=1920
+framebuffer_height=1080
 ```
 
 ***************************************************

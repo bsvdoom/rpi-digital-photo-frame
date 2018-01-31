@@ -1,7 +1,7 @@
-Raspberry Pi Zero W Picture Frame
+Raspberry Pi Picture Frame
 =======================
 
-Instructions on how to turn a pi zero w system into a digital picture frame.
+Instructions on how to turn a raspberry pi  into a digital picture frame.
 
 
 ***************************************************

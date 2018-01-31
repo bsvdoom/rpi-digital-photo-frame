@@ -1,8 +1,6 @@
 #!/bin/bash
 
-IMG_PATH="/home/pi/rpi-digital-photo-frame/pictures/images"
-
-cd $IMG_PATH
+cd /home/pi/rpi-digital-photo-frame/pictures
 
 FILE_LIST=`ls -1 *.jpg`
 

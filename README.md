@@ -8,9 +8,10 @@ Instructions on how to turn a linux system into a digital picture frame.
 The installer installs screensaver and imagemagick software, sets homedir, 
 creates a directory for the pictures, makes shell scripts runable, adds slideshow.sh to run on startup.
 
-1. chmod +x install.sh; sudo ./install.sh
-2. Copy your images into the images dir
-3. Reboot & enjoy!
+1. git clone https://github.com/MrHDR/rpi-digital-photo-frame.git
+2. sudo chmod +x install.sh; sudo ./install.sh
+3. Copy your images into the images dir
+4. Reboot & enjoy!
 
 ***************************************************
 FAQ
@@ -25,4 +26,4 @@ FAQ
 
 -resize.sh will resize any images that are larger AND ONLY LARGER than the set size.
 
--Currently this is set to 1024x768, but you can set it to whatever resolution you are running at.
+-Currently this is set to 1920x1080, but you can set it to whatever resolution you are running at.

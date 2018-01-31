@@ -17,6 +17,6 @@ do
         FILES_COUNT=`ls -1 *.jpg | wc -l`
 
         killall -9 fbi
-        fbi -T 2 -noverbose -u -a -t $TIMEOUT $FILE_LIST
+        fbi -T 1 -noverbose -u -a -t $TIMEOUT $FILE_LIST
         sleep $(($TIMEOUT*$FILES_COUNT))
 done

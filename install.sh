@@ -13,37 +13,7 @@ chmod +x *.sh
 mkdir images
 chmod 777 images
 
-sudo cat <<EOT >> /etc/init.d/slideshow
-#! /bin/sh
-### BEGIN INIT INFO
-# Provides:          slideshow
-# Required-Start:    \$remote_fs \$syslog
-# Required-Stop:     \$remote_fs \$syslog
-# Default-Start:     2 3 4 5
-# Default-Stop:      0 1 6
-# Short-Description: Start daemon at boot time
-# Description:       Enable service provided by daemon.
-### END INIT INFO
-case "\$1" in
-    start)
-        echo "Starting slideshow"
-        sh /home/pi/rpi-digital-photo-frame/pictures/slideshow.sh &
-    ;;
-    stop)
-        echo -n "Shutting down slideshow"
-        for i in \`ps aux | grep './slideshow.sh' | grep -v grep | awk '{print \$2}'\`
-        do
-          kill -9 \$i
-        done
-        killall -9 fbi
-    ;;
-    *)
-        echo "Usage: \$0 {start|stop}"
-        exit 1
-esac
-exit 0
-EOT
-
+sudo crontab /home/pi/rpi-digital-photo-frame/pictures/slidecron
 chmod +x /etc/init.d/slideshow
 update-rc.d slideshow defaults 91
 

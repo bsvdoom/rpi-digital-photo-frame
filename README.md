@@ -14,6 +14,8 @@ sudo apt install git -y
 git clone https://github.com/MrHDR/rpi-digital-photo-frame.git
 cd rpi-digital-photo-frame
 chmod +x install.sh; sudo ./install.sh
+put your pictures in /rpi/digital-photo-frame/pictures/images
+reboot your pi
 ```
 ***************************************************
 FAQ

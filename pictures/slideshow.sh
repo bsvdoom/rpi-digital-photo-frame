@@ -9,11 +9,11 @@
 # Description:       Enable service provided by daemon.
 ### END INIT INFO
 
-HOMEDIR=`cat homedir.txt`
+HOMEDIR=`/home/pi/rpi-digital-photo-frame/pictures`
 # Where are the image files?
 IMG_PATH="$HOMEDIR/images/"
 # How long between transitions?
-TIMEOUT=`cat delay.txt`
+TIMEOUT=`cat $HOMEDIR/delay.txt`
 
 cd $IMG_PATH
 

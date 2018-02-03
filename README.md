@@ -20,6 +20,8 @@ reboot your pi
 ***************************************************
 Tips
 
+- you can upload pictures from any browser just by entering your pi's ip address.
+
 - you might want to set the screen size to 1080p, to do that do the following.
 ```
 sudo nano /boot/config.txt

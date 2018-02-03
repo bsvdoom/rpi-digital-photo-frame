@@ -5,9 +5,11 @@ if [ "$EUID" -ne 0 ]
   exit
 fi
 
-apt-get update && apt-get install fbi imagemagick
+apt-get update && apt-get install fbi imagemagick apache2 php libapache2-mod-php -y
 
 cd /home/pi/rpi-digital-photo-frame/pictures
+sudo mv /home/pi/rpi-digital-photo-frame/index.html /var/www/html/
+sudo mv /home/pi/rpi-digital-photo-frame/upload.php /var/www/html/
 echo "10" > delay.txt
 chmod +x *.sh
 mkdir images

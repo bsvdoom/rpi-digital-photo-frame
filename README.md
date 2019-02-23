@@ -1,16 +1,45 @@
-linux-digital-photo-frame
+Raspberry Pi Picture Frame
 =======================
 
-Instructions on how to turn a linux system into a digital picture frame.
+Instructions on how to turn a raspberry pi  into a digital picture frame.
 
 
 ***************************************************
 The installer installs screensaver and imagemagick software, sets homedir, 
 creates a directory for the pictures, makes shell scripts runable, adds slideshow.sh to run on startup.
 
-1. chmod +x install.sh; sudo ./install.sh
-2. Copy your images into the images dir
-3. Reboot & enjoy!
+```sh
+sudo apt update
+sudo apt install git -y
+git clone https://github.com/MrHDR/rpi-digital-photo-frame.git
+cd rpi-digital-photo-frame
+chmod +x install.sh; sudo ./install.sh
+put your pictures in /rpi/digital-photo-frame/pictures/images
+reboot your pi
+```
+***************************************************
+Tips
+
+- you can upload pictures from any browser just by entering your pi's ip address.
+
+- you might want to set the screen size to 1080p, to do that do the following.
+```
+sudo nano /boot/config.txt
+```
+Change
+```
+#disable_overscan=1
+
+#framebuffer_width=1280
+#framebuffer_height=720
+```
+to
+```
+disable_overscan=1
+
+framebuffer_width=1920
+framebuffer_height=1080
+```
 
 ***************************************************
 FAQ
@@ -25,4 +54,4 @@ FAQ
 
 -resize.sh will resize any images that are larger AND ONLY LARGER than the set size.
 
--Currently this is set to 1024x768, but you can set it to whatever resolution you are running at.
+-Currently this is set to 1920x1080, but you can set it to whatever resolution you are running at.

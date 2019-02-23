@@ -5,48 +5,16 @@ if [ "$EUID" -ne 0 ]
   exit
 fi
 
-apt-get update && apt-get install fbi imagemagick
+apt-get update && apt-get install fbi imagemagick apache2 php libapache2-mod-php -y
 
-cd pictures
-pwd > homedir.txt
-echo "30" > delay.txt
+cd /home/pi/rpi-digital-photo-frame/pictures
+sudo mv /home/pi/rpi-digital-photo-frame/index.html /var/www/html/
+sudo mv /home/pi/rpi-digital-photo-frame/upload.php /var/www/html/
+echo "10" > delay.txt
 chmod +x *.sh
 mkdir images
 chmod 777 images
 
-cat <<EOT >> /etc/init.d/slideshow
-#! /bin/sh
-### BEGIN INIT INFO
-# Provides:          slideshow
-# Required-Start:    \$remote_fs \$syslog
-# Required-Stop:     \$remote_fs \$syslog
-# Default-Start:     2 3 4 5
-# Default-Stop:      0 1 6
-# Short-Description: Start daemon at boot time
-# Description:       Enable service provided by daemon.
-### END INIT INFO
-case "\$1" in
-    start)
-        echo "Starting slideshow"
-        cd `pwd`
-        ./slideshow.sh &
-    ;;
-    stop)
-        echo -n "Shutting down slideshow"
-        for i in \`ps aux | grep './slideshow.sh' | grep -v grep | awk '{print \$2}'\`
-        do
-          kill -9 \$i
-        done
-        killall -9 fbi
-    ;;
-    *)
-        echo "Usage: \$0 {start|stop}"
-        exit 1
-esac
-exit 0
-EOT
-
-chmod +x /etc/init.d/slideshow
-update-rc.d slideshow defaults 91
+sudo crontab /home/pi/rpi-digital-photo-frame/pictures/slidecron
 
 echo -e "\n -Done-\n"

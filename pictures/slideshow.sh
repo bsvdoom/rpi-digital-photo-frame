@@ -1,22 +1,20 @@
 #!/bin/sh
-HOMEDIR=`cat homedir.txt`
-# Where are the image files?
-IMG_PATH="$HOMEDIR/images/"
-# How long between transitions?
-TIMEOUT=`cat delay.txt`
 
-cd $IMG_PATH
+# How long between transitions?
+TIMEOUT=`cat /home/pi/rpi-digital-photo-frame/pictures/delay.txt`
+
+cd /home/pi/rpi-digital-photo-frame/pictures/images
 
 while true
 do
-        ../remove_spaces.sh
-        ../resize.sh
-        ../rotate.sh
+        /home/pi/rpi-digital-photo-frame/pictures/remove_spaces.sh
+        /home/pi/rpi-digital-photo-frame/pictures/resize.sh
+        /home/pi/rpi-digital-photo-frame/pictures/rotate.sh
 
         FILE_LIST=`ls -1 *.jpg`
         FILES_COUNT=`ls -1 *.jpg | wc -l`
 
         killall -9 fbi
-        fbi -T 2 -noverbose -u -a -t $TIMEOUT $FILE_LIST
+        fbi -T 1 -noverbose -u -a -t $TIMEOUT $FILE_LIST
         sleep $(($TIMEOUT*$FILES_COUNT))
 done

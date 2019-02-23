@@ -1,10 +1,6 @@
 #!/bin/bash
 
-HOMEDIR=`cat homedir.txt`
-# Where are the image files?
-IMG_PATH="$HOMEDIR/images/"
-
-cd $IMG_PATH
+cd /home/pi/rpi-digital-photo-frame/pictures
 
 FILE_LIST=`ls -1 *.jpg`
 
